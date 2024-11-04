@@ -28,7 +28,8 @@
   <script type="injector-importmap">
     {
       "imports": {
-        "@fourcheese-pizza/root-config": "//localhost:9000/fourcheese-pizza-root-config.js"
+        "@fourcheese-pizza/root-config": "//localhost:9000/fourcheese-pizza-root-config.js",
+        "@fourcheese-pizza/mf-common": "//localhost:8082/fourcheese-pizza-mf-common.js"
       }
     }
   </script>
@@ -43,12 +44,14 @@
   </noscript>
 
   <div class="page__content">
-
+    <div id="mf-header"></div>
+    <div id="mf-auth"></div>
     <div id="mf-footer"></div>
   </div>
   <script>
     window.importMapInjector.initPromise.then(() => {
       import('@fourcheese-pizza/root-config');
+      import('@fourcheese-pizza/mf-common');
     });
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>

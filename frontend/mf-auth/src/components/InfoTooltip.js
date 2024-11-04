@@ -1,10 +1,10 @@
 import React from 'react';
-import SuccessIcon from '../images/success-icon.svg';
-import ErrorIcon from '../images/error-icon.svg';
+import SuccessIcon from '../../../src/images/success-icon.svg';
+import ErrorIcon from '../../../src/images/error-icon.svg';
 
 function InfoTooltip({ isOpen, onClose, status }) {
   const icon = status === 'success' ? SuccessIcon : ErrorIcon
-  const text = status === 'success' ? "Вы успешно зарегистрировались" : 
+  const text = status === 'success' ? "Вы успешно зарегистрировались" :
      "Что-то пошло не так! Попробуйте ещё раз."
   return (
     <div className={`popup ${isOpen && 'popup_is-opened'}`}>
@@ -23,4 +23,3 @@ function InfoTooltip({ isOpen, onClose, status }) {
 
 export default InfoTooltip;
 
- 
