@@ -1,5 +1,9 @@
 import './blocks/popup/popup.css'
+import './blocks/content/content.css'
+import './vendor/fonts.css'
+import './vendor/normalize.css'
 import * as auth from "./utils/auth";
+import * as api from "./utils/api";
 
 // Anything exported from this file is importable by other in-browser modules.
 export function getCurrentUserEmail() {
@@ -53,3 +57,9 @@ export function login(email, password) {
         })
 }
 
+export function getApiClient() {
+    return api
+}
+
+export const EVENT_NAME_CLOSE_ALL_POPUPS = 'close all popup';
+export const EVENT_NAME_USER_UPDATED = 'user updated';

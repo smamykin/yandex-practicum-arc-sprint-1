@@ -4,7 +4,7 @@ import Register from "./Register";
 import Login from "./Login";
 import InfoTooltip from "./InfoTooltip";
 import './../blocks/auth-form/auth-form.css'
-import {signOutEventType, checkToken, register, login} from "@fourcheese-pizza/mf-common"
+import {EVENT_NAME_CLOSE_ALL_POPUPS,signOutEventType, checkToken, register, login} from "@fourcheese-pizza/mf-common"
 
 export default function App(props) {
     const history = useHistory();
@@ -35,7 +35,7 @@ export default function App(props) {
     }
     function closeAllPopups() {
         setIsInfoToolTipOpen(false);
-        document.dispatchEvent(new CustomEvent('close all popup', {detail: 'auth popup'}));
+        document.dispatchEvent(new CustomEvent(EVENT_NAME_CLOSE_ALL_POPUPS, {detail: 'auth popup'}));
     }
 
     // при монтировании App описан эффект, проверяющий наличие токена и его валидности
